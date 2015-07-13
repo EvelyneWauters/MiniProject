@@ -1,6 +1,5 @@
 package ca.evelyne.service;
 
-import ca.evelyne.domain.film.Movie;
 import ca.evelyne.domain.person.Actor;
 import ca.evelyne.repository.ActorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,24 +14,23 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 /**
  * Created by Flyne on 12/07/2015.
  */
 @RestController
+@RequestMapping("actor")
 public class ActorService {
     @Autowired
     ActorRepository actorRepository;
 
-    @RequestMapping(value="all/actors")
+    @RequestMapping(value="/all")
     public List<Actor> findAllActors()  {
         return actorRepository.findAll();
     }
 
-    @RequestMapping(value = "actor/{actorId}", method = GET)
+    @RequestMapping(value = "/id/{actorId}", method = GET)
     public ResponseEntity<Actor> findById(@PathVariable("actorId") int id) {
         Actor actor = actorRepository.findOne(id);
         if(actor == null) {
@@ -42,17 +40,25 @@ public class ActorService {
         }
     }
 
-    @RequestMapping(value = "actor/{actorId}", method = DELETE)
+    @RequestMapping(value = "/delete/{actorId}", method = DELETE)
     public void removeById(@PathVariable("actorId") int id) {
         actorRepository.delete(id);
     }
 
-    @RequestMapping(value = "actor/create", method = POST, consumes = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/create", method = POST, consumes = APPLICATION_JSON_VALUE)
     public ResponseEntity create(@RequestBody Actor actor) {
         actorRepository.save(actor);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", "http://localhost:8080/actor/" + actor.getId());
         return new ResponseEntity(headers, HttpStatus.CREATED);
+    }
+
+    @RequestMapping(value="/update", method = PUT, consumes = APPLICATION_JSON_VALUE)
+    public ResponseEntity update(@RequestBody Actor actor)  {
+        actorRepository.save(actor);
+        HttpHeaders header = new HttpHeaders();
+        header.add("Location", "http://localhost:8080/actor/" + actor.getId());
+        return new ResponseEntity(header, HttpStatus.CREATED);
     }
 
     }

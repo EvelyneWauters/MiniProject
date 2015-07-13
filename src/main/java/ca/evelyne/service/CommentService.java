@@ -1,8 +1,6 @@
 package ca.evelyne.service;
 
-import ca.evelyne.domain.person.Actor;
 import ca.evelyne.domain.person.Comment;
-import ca.evelyne.repository.ActorRepository;
 import ca.evelyne.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -22,16 +20,17 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 
 @RestController
+@RequestMapping("comment")
 public class CommentService {
     @Autowired
     CommentRepository commentRepository;
 
-    @RequestMapping(value="all/comments")
+    @RequestMapping(value="/all")
     public List<Comment> findAllComments()  {
         return commentRepository.findAll();
     }
 
-    @RequestMapping(value = "comment/{commentId}", method = GET)
+    @RequestMapping(value = "/id/{commentId}", method = GET)
     public ResponseEntity<Comment> findById(@PathVariable("commentId") int id) {
         Comment comment = commentRepository.findOne(id);
         if(comment == null) {
@@ -41,12 +40,12 @@ public class CommentService {
         }
     }
 
-    @RequestMapping(value = "comment/{commentId}", method = DELETE)
+    @RequestMapping(value = "/delete/{commentId}", method = DELETE)
     public void removeById(@PathVariable("commentId") int id) {
         commentRepository.delete(id);
     }
 
-    @RequestMapping(value = "comment/create", method = POST, consumes = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/create", method = POST, consumes = APPLICATION_JSON_VALUE)
     public ResponseEntity create(@RequestBody Comment comment) {
         commentRepository.save(comment);
         HttpHeaders headers = new HttpHeaders();

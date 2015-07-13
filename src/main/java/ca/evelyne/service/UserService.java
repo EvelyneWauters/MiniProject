@@ -1,7 +1,5 @@
 package ca.evelyne.service;
 
-import ca.evelyne.domain.film.Movie;
-import ca.evelyne.domain.person.Actor;
 import ca.evelyne.domain.person.User;
 import ca.evelyne.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,17 +21,18 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
  * Created by Flyne on 12/07/2015.
  */
 @RestController
+@RequestMapping("user")
 public class UserService {
     @Autowired
     UserRepository userRepository;
 
 
-    @RequestMapping(value="all/users")
+    @RequestMapping(value="all")
     public List<User> findAllUsers()    {
         return userRepository.findAll();
     }
 
-    @RequestMapping(value="user/{userId}")
+    @RequestMapping(value="id/{userId}")
     public ResponseEntity<User> findUserById(@PathVariable("userId") int id)    {
         User user = userRepository.findOne(id);
         if(user == null) {
@@ -43,13 +42,13 @@ public class UserService {
         }
     }
 
-    @RequestMapping(value = "user/{userId}", method = DELETE)
+    @RequestMapping(value = "delete/{userId}", method = DELETE)
     public void removeById(@PathVariable("userId") int id) {
         userRepository.delete(id);
     }
 
 
-    @RequestMapping(value = "user/create", method = POST, consumes = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "create", method = POST, consumes = APPLICATION_JSON_VALUE)
     public ResponseEntity create(@RequestBody User user) {
         userRepository.save(user);
         HttpHeaders headers = new HttpHeaders();
