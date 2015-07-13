@@ -15,10 +15,11 @@
 <body>
 <div class="container">
 <h1>Hello there!</h1>
-<h6><span class="glyphicon glyphicon-fire"/>-- under construction -- under construction --</h6>
+<h6><span class="glyphicon glyphicon-fire"/>-- under construction -- under construction --<span class="glyphicon glyphicon-fire"/></h6>
 <p>Welcome to this brand new movie database</p>
     <span>Movielist</span>
     <a href="filmlist.html">click here to see all added movies</a>
+    <a href="allfilms">click here to see all added movies in jps-form</a>
 
 </div>
 </body>
