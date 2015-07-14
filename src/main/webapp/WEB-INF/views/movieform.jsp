@@ -38,13 +38,29 @@
             </div>
 
             <div class="form-group">
-                <label for="summary">summary</label>
-                <textarea class="form-control" rows="5" id="summary"></textarea>
+                <label for="yearReleased">released</label>
+                <sf:input path="yearReleased" class="form-control"/>
             </div>
 
             <div class="form-group">
+                <label for="summary">summary</label>
+                <sf:textarea class="form-control" rows="5" path="summary" ></sf:textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="genre">genre</label>
+                <sf:select path="genre" items="${genres}" cssClass="form-control"/>
+            </div>
+
+
+            <div class="form-group">
                 <label for="length">length</label>
-                <sf:input path="length" class="form-control" value="length"/>
+                <sf:input path="length" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="director">director</label>
+                <sf:input path="director" class="form-control" />
             </div>
 
             <div class="form-group">
@@ -52,8 +68,14 @@
                 <sf:input path="coverImageUrl" class="form-control"/>
             </div>
 
+            <div class="form-group">
+                <label for="movieTrailerUrl">URL trailer (embedded link)</label>
+                <sf:input path="movieTrailerUrl" class="form-control"/>
+            </div>
+
 
             <sf:hidden path="id"/>
+            <sf:hidden path="rating"/>
 
 
             <button type="submit" class="btn btn-success">submit</button>

@@ -18,7 +18,7 @@
 <body>
 <div class="container">
     <h1> ${movie.title} </h1>
-    <h5>length: ${movie.length} genre: ${movie.genre}</h5>
+    <h5>length: ${movie.length} min genre: ${movie.genre}</h5>
 
     <div class="row">
         <div class="col-md-4">

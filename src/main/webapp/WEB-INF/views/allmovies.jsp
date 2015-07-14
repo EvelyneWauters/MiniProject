@@ -40,8 +40,8 @@
                         <td><a href="/movie/id/${movie.id}">${movie.rating}</a></td>
                         <td><a href="/movie/id/${movie.id}">${movie.title}</a></td>
                         <td><a href="/movie/id/${movie.id}">${movie.yearReleased}</a></td>
-                        <td><a href="/movie/id/${movie.id}">${movie.genre}</a></td>
-                        <td><a href="/movie/form"> <span class="glyphicon glyphicon-pencil"/>  </a></td>
+                        <td><a href="/movie/id/${movie.id}">${movie.genre.label}</a></td>
+                        <td><a href="/movie/form?id=${movie.id}"> <span class="glyphicon glyphicon-pencil"/>  </a></td>
                         <td><a href="/movie/delete/id/${movie.id}"> <span class="glyphicon glyphicon-erase"/>  </a></td>
                     </tr>
                 </c:forEach>

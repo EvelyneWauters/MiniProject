@@ -1,5 +1,6 @@
 package ca.evelyne.controller;
 
+import ca.evelyne.domain.movie.Genre;
 import ca.evelyne.domain.movie.Movie;
 import ca.evelyne.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -55,6 +58,8 @@ public class MovieController {
         return "movieform";
     }
 
+
+
     //POST-method of the create-page
     @RequestMapping(value= "/create", method = RequestMethod.POST)
     public String create(@Valid Movie movie, BindingResult bindingResult)  {
@@ -66,12 +71,22 @@ public class MovieController {
     }
 
 
-
+    //delete movie
     @RequestMapping(value="/delete/id/{id}")
     public String delete(@PathVariable("id") int movieId, Map<String, Object> model)    {
         movieRepository.delete(movieId);
-        model.remove(movieId);
+        //model.remove(movieId);
         return "redirect:/movie/all";
+    }
+
+    //put genre-enum values in a list so we can use it for the dropdown menu
+    @ModelAttribute(value = "genres")
+    public List<Genre> genres(){
+        List<Genre> genres = new ArrayList<>();
+        for (Genre g: Genre.values()){
+            genres.add(g);
+        }
+        return genres;
     }
 
 
