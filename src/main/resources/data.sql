@@ -62,22 +62,22 @@ insert into actor(first_name, last_name, gender, birth_date, city_born_in, count
 insert into movie(title, genre, length, year_released, director, summary, cover_image_url, movie_trailer_url, rating) values
 ('Serenity', 'SCIENCEFICTION', '119', '2005', 'Joss Whedon',
 'The crew of the ship Serenity tries to evade an assassin sent to recapture one of their number who is telepathic.',
-'http://ia.media-imdb.com/images/M/MV5BMTI0NTY1MzY4NV5BMl5BanBnXkFtZTcwNTczODAzMQ@@._V1_SY317_CR0,0,214,317_AL_.jpg', 'https://youtu.be/JY3u7bB7dZk',
+'http://ia.media-imdb.com/images/M/MV5BMTI0NTY1MzY4NV5BMl5BanBnXkFtZTcwNTczODAzMQ@@._V1_SY317_CR0,0,214,317_AL_.jpg', 'https://www.youtube.com/embed/JY3u7bB7dZk',
  4);
 insert into movie(title, genre, length, year_released, director, summary, cover_image_url, movie_trailer_url, rating) values
 ('The Great Gatsby', 'DRAMA', '143', '2013', 'Baz Lurhmann',
 'A Midwestern war veteran finds himself drawn to the past and lifestyle of his millionaire neighbor.',
-'http://ia.media-imdb.com/images/M/MV5BMTkxNTk1ODcxNl5BMl5BanBnXkFtZTcwMDI1OTMzOQ@@._V1_SX214_AL_.jpg', 'https://www.youtube.com/embed/riyo2_AdNq0',
+'http://ia.media-imdb.com/images/M/MV5BMTkxNTk1ODcxNl5BMl5BanBnXkFtZTcwMDI1OTMzOQ@@._V1_SX214_AL_.jpg', 'https://www.youtube.com/embed/sN183rJltNM',
  5);
 insert into movie(title, genre, length, year_released, director, summary, cover_image_url, movie_trailer_url, rating) values
 ('Django Unchained', 'DRAMA', '165', '2012', 'Quentin Tarantino',
 'With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.',
-'http://ia.media-imdb.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_SX214_AL_.jpg', 'https://youtu.be/s8CZKbDzP1E',
+'http://ia.media-imdb.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_SX214_AL_.jpg', 'https://www.youtube.com/embed/eUdM9vrCbow',
  5);
 insert into movie(title, genre, length, year_released, director, summary, cover_image_url, movie_trailer_url, rating) values
 ('The Wolf Of Wall Street', 'COMEDY', '180', '2013', 'Martin Scorsese',
 'Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.',
-'http://ia.media-imdb.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX214_AL_.jpg', 'https://youtu.be/iszwuX1AK6A',
+'http://ia.media-imdb.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX214_AL_.jpg', 'https://www.youtube.com/embed/pabEtIERlic',
  5);
 -- insert into movie(title, genre, length, year_released, summary, cover_image_url, movie_trailer_url) values ('', '', '', '', '', '', '');
 
