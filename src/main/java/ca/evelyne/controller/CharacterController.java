@@ -1,9 +1,7 @@
 package ca.evelyne.controller;
 
 import ca.evelyne.domain.person.Actor;
-import ca.evelyne.domain.person.Gender;
 import ca.evelyne.domain.person.MovieCharacter;
-import ca.evelyne.repository.ActorRepository;
 import ca.evelyne.repository.MovieCharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -12,8 +10,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;

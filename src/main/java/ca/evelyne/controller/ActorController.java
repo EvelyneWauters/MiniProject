@@ -1,12 +1,9 @@
 package ca.evelyne.controller;
 
 
-import ca.evelyne.domain.movie.Genre;
-import ca.evelyne.domain.movie.Movie;
 import ca.evelyne.domain.person.Actor;
 import ca.evelyne.domain.person.Gender;
 import ca.evelyne.repository.ActorRepository;
-import ca.evelyne.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
