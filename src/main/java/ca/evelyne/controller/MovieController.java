@@ -4,6 +4,7 @@ import ca.evelyne.domain.film.Movie;
 import ca.evelyne.repository.MovieRepository;
 import ca.evelyne.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,8 +30,8 @@ public class MovieController {
 
     //Find all movies
     @RequestMapping("/all")
-    public String allmovies(Map<String, Object> model)   {
-        model.put("movie", movieRepository.findAll());
+    public String allMoviesSortAlfa(Map<String, Object> model)   {
+        model.put("movie", movieRepository.findAll(new Sort(new Sort.Order(Sort.Direction.ASC, "title"))));
         return "allmovies";
     }
 
@@ -54,13 +55,13 @@ public class MovieController {
     }
 
     //POST-method of the create-page
-    @RequestMapping(value= "/create", method = RequestMethod.POST, consumes = APPLICATION_JSON_VALUE)
+    @RequestMapping(value= "/create", method = RequestMethod.POST)
     public String create(@Valid Movie movie, BindingResult bindingResult)  {
         if(bindingResult.hasErrors())   {
             return "movieform";
         }
         movieRepository.save(movie);
-        return "redirect:/all";
+        return "redirect:/movie/all";
     }
 
 }

@@ -5,7 +5,7 @@
     <title>Homepage Moviedatabase</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
-  <link rel="stylesheet" href="mainstylesheet.css"/>
+  <link rel="stylesheet" href="../../../resources/public/mainstylesheet.css"/>
 </head>
 
 
@@ -29,6 +29,7 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="/movie/all">Top movies</a></li>
                             <li><a href="/movie/all">All movies</a></li>
+                            <li><a href="/movie/form">Add movie</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 

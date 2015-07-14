@@ -19,3 +19,10 @@
         padding-bottom: 12px;
     }
 }
+
+.blueskies{
+    background-image: url("http://nhtheatreawards.org/Data/Sites/1/aaImages/graphics/Sky%20and%20Clouds/beautiful_sky-dsc01468-dws.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+

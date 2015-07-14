@@ -7,19 +7,19 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="../../../resources/public/mainstylesheet.css"/>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <title>Create form</title>
+    <title>Create movie</title>
 </head>
-
 
 <body>
 <div class="container">
 
+    <div class="blueskies">
 <h1>What have you been watching lately?</h1>
 
 
-    <div class="container">
 
         <h2>add a movie <small>or edit an existing one</small></h2>
 
@@ -40,7 +40,7 @@
 
             <div class="form-group">
                 <label for="length">length</label>
-                <sf:input path="length" class="form-control" value=" "/>
+                <sf:input path="length" class="form-control" value="length"/>
             </div>
 
             <div class="form-group">
@@ -48,13 +48,13 @@
                 <sf:input path="coverImageUrl" class="form-control"/>
             </div>
 
+
             <sf:hidden path="id"/>
 
 
             <button type="submit" class="btn btn-success">submit</button>
         </sf:form>
-
-</div>
+    </div>
 </div>
 </body>
 </html>
