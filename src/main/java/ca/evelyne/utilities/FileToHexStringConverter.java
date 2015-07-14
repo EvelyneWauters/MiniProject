@@ -1,19 +1,24 @@
 package ca.evelyne.utilities;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class FileToHexStringConverter {
     public static void main(String[] args) throws IOException {
-        // TODO: seems to have a bug, byte string gets corrupted somewhere.
-        try(FileInputStream stream = new FileInputStream(new File("./images/david-tennant.jpg"))) {
+        // TODO: parameterize filename to args[]
+        try(FileInputStream fis = new FileInputStream(new File("images/david-tennant.jpg"))) {
             System.out.print("0x");
-            int b = stream.read();
-            while(b != -1) {
-                System.out.printf("%2h ",b);
-                b = stream.read();
-            }
+            toHexString(fis, System.out);
         }
+    }
+
+    static void toHexString(InputStream i, OutputStream o) throws IOException {
+        BufferedInputStream in = new BufferedInputStream(i);
+        PrintStream out = new PrintStream(new BufferedOutputStream(o));
+        int b = in.read();
+        while(b != -1) {
+            out.printf("%02X", b);
+            b = in.read();
+        }
+        out.flush();
     }
 }
