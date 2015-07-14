@@ -1,7 +1,5 @@
 package ca.evelyne.domain.person;
 
-import ca.evelyne.domain.film.Movie;
-
 import javax.persistence.*;
 
 
@@ -43,5 +41,17 @@ public class MovieCharacter {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
+
+    public Integer getId() {
+        return id;
     }
 }

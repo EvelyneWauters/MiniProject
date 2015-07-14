@@ -15,7 +15,7 @@
 
 <body>
 <div class="container">
-    <h1>Top Movies</h1>
+    <h1>Movies</h1>
     <c:choose>
         <c:when test="${movie == null or empty movie}">
             <p>No movies found :-(</p>
@@ -25,18 +25,24 @@
                 <tr>
                     <th>id</th>
                     <th></th>
+                    <th>rating</th>
                     <th>title</th>
                     <th>release year</th>
                     <th>genre</th>
+                    <th>edit</th>
+                    <th>delete</th>
                 </tr>
 
                 <c:forEach var="movie" items="${movie}">
                     <tr>
                         <td><a href="/movie/id/${movie.id}">${movie.id}</a></td>
                         <td><a href="/movie/id/${movie.id}"><img src="${movie.coverImageUrl}" alt="cover img" height="30px"></a></td>
+                        <td><a href="/movie/id/${movie.id}">${movie.rating}</a></td>
                         <td><a href="/movie/id/${movie.id}">${movie.title}</a></td>
                         <td><a href="/movie/id/${movie.id}">${movie.yearReleased}</a></td>
                         <td><a href="/movie/id/${movie.id}">${movie.genre}</a></td>
+                        <td><a href="/movie/form"> <span class="glyphicon glyphicon-pencil"/>  </a></td>
+                        <td><a href="/movie/delete/id/${movie.id}"> <span class="glyphicon glyphicon-erase"/>  </a></td>
                     </tr>
                 </c:forEach>
             </table>

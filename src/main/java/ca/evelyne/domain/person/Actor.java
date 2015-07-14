@@ -47,11 +47,11 @@ public class Actor extends Person {
         this.countryBornIn = countryBornIn;
     }
 
-    //    public List<MovieCharacter> getCharacterList() {
+    //    public List<MovieCharacter> getCast() {
 //        return characterList;
 //    }
 //
-//    public void setCharacterList(List<MovieCharacter> characterList) {
+//    public void setCast(List<MovieCharacter> characterList) {
 //        this.characterList = characterList;
 //    }
 }

@@ -1,6 +1,6 @@
 package ca.evelyne.repository;
 
-import ca.evelyne.domain.film.Movie;
+import ca.evelyne.domain.movie.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

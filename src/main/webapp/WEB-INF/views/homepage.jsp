@@ -27,7 +27,7 @@
                     </div>
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="/movie/all">Top movies</a></li>
+                            <li class="active"><a href="/movie/allsortonrating"><span class="glyphicon glyphicon-film"/>Top movies</a></li>
                             <li><a href="/movie/all">All movies</a></li>
                             <li><a href="/movie/form">Add movie</a></li>
                             <li class="dropdown">
@@ -54,7 +54,7 @@
         <div class="col-sm-9">
             <h1>Hello there!</h1>
             <h6><span class="glyphicon glyphicon-fire"/>-- under construction -- under construction --<span class="glyphicon glyphicon-fire"/></h6>
-            <p>Welcome to this brand new movie database</p>
+            <p> <span class="glyphicon glyphicon-film"/> Welcome to this brand new movie database</p>
             <span>Movielist</span>
             <a href="/movie/all">click here to see all added movies</a> <br/>
             <a href="/actor/detail">click here to see a test of an actordetailpage</a>        </div>

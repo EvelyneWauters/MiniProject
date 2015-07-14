@@ -1,4 +1,4 @@
-package ca.evelyne.domain.film;
+package ca.evelyne.domain.movie;
 
 /**
  * Created by Evelyne on 10/07/15.

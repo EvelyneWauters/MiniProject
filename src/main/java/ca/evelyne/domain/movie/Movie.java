@@ -1,4 +1,4 @@
-package ca.evelyne.domain.film;
+package ca.evelyne.domain.movie;
 
 
 import ca.evelyne.domain.person.MovieCharacter;
@@ -24,9 +24,10 @@ public class Movie {
     private String coverImageUrl;
     private String movieTrailerUrl;
     private String director;
+    private double rating;
 
     @OneToMany
-    private List<MovieCharacter> characterList;
+    private List<MovieCharacter> cast;
 
     //TODO: convert coverImage from Url to real image
 
@@ -37,7 +38,7 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(String title, int length, String summary, Genre genre, String yearReleased, String coverImageUrl, String movieTrailerUrl, String director, List<MovieCharacter> characterList) {
+    public Movie(String title, int length, String summary, Genre genre, String yearReleased, String coverImageUrl, String movieTrailerUrl, String director, double rating, List<MovieCharacter> cast) {
         this.title = title;
         this.length = length;
         this.summary = summary;
@@ -46,10 +47,9 @@ public class Movie {
         this.coverImageUrl = coverImageUrl;
         this.movieTrailerUrl = movieTrailerUrl;
         this.director = director;
-        this.characterList = characterList;
+        this.rating = rating;
+        this.cast = cast;
     }
-
-
 
     /**
      * Other methods & overrides
@@ -137,11 +137,19 @@ public class Movie {
         this.director = director;
     }
 
-    public List<MovieCharacter> getCharacterList() {
-        return characterList;
+    public List<MovieCharacter> getCast() {
+        return cast;
     }
 
-    public void setCharacterList(List<MovieCharacter> characterList) {
-        this.characterList = characterList;
+    public void setCast(List<MovieCharacter> cast) {
+        this.cast = cast;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 }

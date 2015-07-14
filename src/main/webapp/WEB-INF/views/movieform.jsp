@@ -10,13 +10,17 @@
   <link rel="stylesheet" href="../../../resources/public/mainstylesheet.css"/>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+    <style>
+        .blueskies{ background-image: url("http://nhtheatreawards.org/Data/Sites/1/aaImages/graphics/Sky%20and%20Clouds/beautiful_sky-dsc01468-dws.jpg");
+            background-position: center;
+            background-repeat: no-repeat;}
+    </style>
     <title>Create movie</title>
 </head>
 
-<body>
+<body class = "blueskies">
 <div class="container">
 
-    <div class="blueskies">
 <h1>What have you been watching lately?</h1>
 
 
@@ -54,7 +58,6 @@
 
             <button type="submit" class="btn btn-success">submit</button>
         </sf:form>
-    </div>
 </div>
 </body>
 </html>
