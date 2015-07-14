@@ -20,7 +20,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
  * Created by Flyne on 12/07/2015.
  */
 @RestController
-@RequestMapping("actor")
+@RequestMapping("service/actor")
 public class ActorService {
     @Autowired
     ActorRepository actorRepository;

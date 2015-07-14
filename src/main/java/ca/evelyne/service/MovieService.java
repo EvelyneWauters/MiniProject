@@ -14,7 +14,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("movie")
+@RequestMapping("service/movie")
 public class MovieService {
     @Autowired
     MovieRepository movieRepository;

@@ -21,7 +21,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
  * Created by Flyne on 12/07/2015.
  */
 @RestController
-@RequestMapping("user")
+@RequestMapping("service/user")
 public class UserService {
     @Autowired
     UserRepository userRepository;

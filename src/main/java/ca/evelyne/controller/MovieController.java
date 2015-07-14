@@ -29,14 +29,14 @@ public class MovieController {
     @RequestMapping("/all")
     public String allMoviesSortAlfa(Map<String, Object> model)   {
         model.put("movie", movieRepository.findAll(new Sort(new Sort.Order(Sort.Direction.ASC, "title"))));
-        return "allmovies";
+        return "movielist";
     }
 
     //Find all movies
     @RequestMapping("/allsortonrating")
     public String allMoviesSortOnRating(Map<String, Object> model)   {
         model.put("movie", movieRepository.findAll(new Sort(new Sort.Order(Sort.Direction.DESC, "rating"))));
-        return "allmovies";
+        return "movielist";
     }
 
     //find movie by id and show details

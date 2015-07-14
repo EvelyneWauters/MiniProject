@@ -27,7 +27,7 @@ public class ActorController {
     //Find all actors
     @RequestMapping("/all")
     public String allActorsSortAlfa(Map<String, Object> model)   {
-        model.put("movie", actorRepository.findAll(new Sort(new Sort.Order(Sort.Direction.ASC, "lastName"))));
+        model.put("actor", actorRepository.findAll(new Sort(new Sort.Order(Sort.Direction.ASC, "lastName"))));
         return "actorlist";
     }
 
@@ -72,7 +72,7 @@ public class ActorController {
     }
 
     //put gender-enum values in a list so we can use it for the dropdown menu
-    @ModelAttribute(value = "gender")
+    @ModelAttribute(value = "genders")
     public List<Gender> genders(){
         List<Gender> genders = new ArrayList<>();
         for (Gender g: Gender.values()){

@@ -16,7 +16,7 @@ public class Person {
     private String lastName;
     @Lob
     private String bio;
-    private String imageURL;
+    private String imageUrl;
     private Date birthDate;
     @Enumerated (EnumType.STRING)
     private Gender gender;
@@ -29,11 +29,11 @@ public class Person {
     public Person() {
     }
 
-    public Person(String firstName, String lastName, String bio, String imageURL, Date birthDate, Gender gender, byte[] image) {
+    public Person(String firstName, String lastName, String bio, String imageUrl, Date birthDate, Gender gender, byte[] image) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.bio = bio;
-        this.imageURL = imageURL;
+        this.imageUrl = imageUrl;
         this.birthDate = birthDate;
         this.gender = gender;
         this.image = image;
@@ -84,12 +84,12 @@ public class Person {
         this.bio = bio;
     }
 
-    public String getImageURL() {
-        return imageURL;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Date getBirthDate() {

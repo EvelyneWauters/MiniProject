@@ -20,7 +20,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 
 @RestController
-@RequestMapping("comment")
+@RequestMapping("service/comment")
 public class CommentService {
     @Autowired
     CommentRepository commentRepository;
