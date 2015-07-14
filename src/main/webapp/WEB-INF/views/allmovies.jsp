@@ -22,6 +22,7 @@
             <table class="table table-hover">
                 <tr>
                     <th>id</th>
+                    <th>thumbnail</th>
                     <th>title</th>
                     <th>release year</th>
                     <th>genre</th>
@@ -30,6 +31,7 @@
                 <c:forEach var="movie" items="${movie}">
                     <tr>
                         <td><a href="/movie/id/${movie.id}">${movie.id}</a></td>
+                        <td><a href="/movie/id/${movie.id}"><img src="${movie.coverImageUrl}" alt="cover img" height="30px"></a></td>
                         <td><a href="/movie/id/${movie.id}">${movie.title}</a></td>
                         <td><a href="/movie/id/${movie.id}">${movie.yearReleased}</a></td>
                         <td><a href="/movie/id/${movie.id}">${movie.genre}</a></td>

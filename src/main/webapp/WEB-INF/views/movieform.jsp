@@ -16,10 +16,7 @@
 <body>
 <div class="container">
 
-<h1>test form</h1>
-
-    <div> and test this: ${movie.id}</div>
-    <div> and test this: ${movie.title}</div>
+<h1>What have you been watching lately?</h1>
 
 
     <div class="container">
@@ -27,7 +24,8 @@
         <h2>add a movie <small>or edit an existing one</small></h2>
 
 
-        <sf:form commandName="film" action="/create">
+        <sf:form commandName="movie" action="/movie/create">
+
 
             <div class="form-group">
                 <label for="title">title</label>
@@ -36,21 +34,27 @@
             </div>
 
             <div class="form-group">
-                <label for="length">length</label>
-                <sf:input path="length" class="form-control"/>
+                <label for="summary">summary</label>
+                <textarea class="form-control" rows="5" id="summary"></textarea>
             </div>
 
             <div class="form-group">
-                <label for="urlImage">URL poster</label>
-                <sf:input path="urlImage" class="form-control"/>
+                <label for="length">length</label>
+                <sf:input path="length" class="form-control" value=" "/>
+            </div>
+
+            <div class="form-group">
+                <label for="coverImageUrl">URL poster</label>
+                <sf:input path="coverImageUrl" class="form-control"/>
             </div>
 
             <sf:hidden path="id"/>
 
+
             <button type="submit" class="btn btn-success">submit</button>
         </sf:form>
 
-
+</div>
 </div>
 </body>
 </html>
