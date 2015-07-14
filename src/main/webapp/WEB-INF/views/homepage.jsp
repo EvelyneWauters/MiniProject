@@ -27,7 +27,7 @@
                     </div>
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="/allmovies">Top movies</a></li>
+                            <li class="active"><a href="/movie/all">Top movies</a></li>
                             <li><a href="/movie/all">All movies</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>

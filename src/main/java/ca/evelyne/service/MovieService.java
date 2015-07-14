@@ -25,7 +25,7 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
-    @RequestMapping(value = "/id/{movieId}", method = GET)
+    //@RequestMapping(value = "/id/{movieId}", method = GET)
     public ResponseEntity<Movie> findById(@PathVariable("movieId") int id) {
         Movie movie = movieRepository.findOne(id);
         if(movie == null) {
@@ -40,7 +40,7 @@ public class MovieService {
         movieRepository.delete(id);
     }
 
-    @RequestMapping(value = "/create", method = POST, consumes = APPLICATION_JSON_VALUE)
+    //@RequestMapping(value = "/create", method = POST, consumes = APPLICATION_JSON_VALUE)
     public ResponseEntity create(@RequestBody Movie movie) {
         movieRepository.save(movie);
         HttpHeaders headers = new HttpHeaders();
