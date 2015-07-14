@@ -29,8 +29,8 @@
 
                 <c:forEach var="movie" items="${movie}">
                     <tr>
-                        <td><a href="/movie/id/=${movie.id}">${movie.id}</a></td>
-                        <td><a href="/movie/id/=${movie.id}">${movie.title}</a></td>
+                        <td><a href="/movie/detail/${movie.id}">${movie.id}</a></td>
+                        <td><a href="/movie/detail?=${movie.id}">${movie.title}</a></td>
                         <td><a href="/movie/id/=${movie.id}">${movie.yearReleased}</a></td>
                         <td><a href="/movie/id/=${movie.id}">${movie.genre}</a></td>
                     </tr>
@@ -40,7 +40,7 @@
     </c:choose>
 
     <a href="/form" class="btn btn-primary">Add a movie</a>
-    <a href="/hello" class="btn btn-default">Take me all the way home</a>
+    <a href="/" class="btn btn-default">Take me all the way home</a>
 </div>
 </body>
 </html>

@@ -20,7 +20,7 @@ public class MovieService {
     MovieRepository movieRepository;
 
 
-    @RequestMapping("/all")
+    //@RequestMapping("/all")
     public List<Movie> findAll() {
         return movieRepository.findAll();
     }

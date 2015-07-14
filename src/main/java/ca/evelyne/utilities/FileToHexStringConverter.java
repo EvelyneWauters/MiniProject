@@ -11,7 +11,7 @@ public class FileToHexStringConverter {
             System.out.print("0x");
             int b = stream.read();
             while(b != -1) {
-                System.out.print(Integer.toString(b, 16).toUpperCase());
+                System.out.printf("%2h ",b);
                 b = stream.read();
             }
         }
