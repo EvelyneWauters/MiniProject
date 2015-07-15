@@ -81,8 +81,9 @@
                         <tr>
                             <td>${movieCharacter.name}</td>
                             <td><a href="actor/id?=${movieCharacter.actor.id}">${movieCharacter.actor.firstName} ${movieCharacter.actor.lastName}</a></td>
+
                             <td><a href="/character/form?id=${movieCharacter.id}"> <span class="glyphicon glyphicon-pencil"/></a></td>
-                            <td><a href="/character/delete/id/${movieCharacter.id}"> <span class="glyphicon glyphicon-erase"/></a></td>
+                            <td><a href="/character/delete/id/${movieCharacter.id}/${movie.id}"> <span class="glyphicon glyphicon-erase"/></a></td>
                         </tr>
                     </c:forEach>
                 </table>
