@@ -3,16 +3,18 @@
 <html>
 <head>
 
-  <%@ page contentType="text/html;charset=UTF-8" language="java" %>
   <html>
   <head>
     <title>Homepage Moviedatabase</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/mainstylesheet.css"/>
+    <link rel="stylesheet" type="text/css" href="css/stylesheetonepage.css"/>
     <link rel="script" type="text/js" href="js/singlepagescript"/>
     <title>Homepage</title>
 </head>
+
+
 <body>
 <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
   <div class="container">

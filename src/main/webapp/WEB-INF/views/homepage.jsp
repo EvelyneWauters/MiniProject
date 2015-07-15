@@ -12,6 +12,8 @@
 <body class="hollywoodbw">
 <div class="container">
 
+    <jsp:include page="navbar.jsp"></jsp:include>
+
     <div class="row">
         <div class="col-sm-3">
             <div class="sidebar-nav">

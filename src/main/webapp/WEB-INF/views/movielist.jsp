@@ -8,13 +8,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="mainstylesheet.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mainstylesheet.css"/>
+
 
 </head>
 
 
 <body>
 <div class="container">
+    <jsp:include page="navbar.jsp"></jsp:include>
+
+
+
     <h1>Movies</h1>
     <c:choose>
         <c:when test="${movie == null or empty movie}">
@@ -36,13 +41,14 @@
                 <c:forEach var="movie" items="${movie}">
                     <tr>
                         <td><a href="/movie/id/${movie.id}">${movie.id}</a></td>
-                        <td><a href="/movie/id/${movie.id}"><img src="${movie.coverImageUrl}" alt="cover img" height="30px"></a></td>
+                        <td><a href="/movie/id/${movie.id}"><img src="${movie.coverImageUrl}" alt="cover img"
+                                                                 height="30px"></a></td>
                         <td><a href="/movie/id/${movie.id}">${movie.rating}</a></td>
                         <td><a href="/movie/id/${movie.id}">${movie.title}</a></td>
                         <td><a href="/movie/id/${movie.id}">${movie.yearReleased}</a></td>
                         <td><a href="/movie/id/${movie.id}">${movie.genre.label}</a></td>
-                        <td><a href="/movie/form?id=${movie.id}"> <span class="glyphicon glyphicon-pencil"/>  </a></td>
-                        <td><a href="/movie/delete/id/${movie.id}"> <span class="glyphicon glyphicon-erase"/>  </a></td>
+                        <td><a href="/movie/form?id=${movie.id}"> <span class="glyphicon glyphicon-pencil"/> </a></td>
+                        <td><a href="/movie/delete/id/${movie.id}"> <span class="glyphicon glyphicon-erase"/> </a></td>
                     </tr>
                 </c:forEach>
             </table>
@@ -52,11 +58,6 @@
     <a href="/movie/form" class="btn btn-primary">Add a movie</a>
     <a href="/" class="btn btn-default">Take me all the way home</a>
 
-    <footer>
-        <p>
-            © Let's move to Hollywood -- Evelyne 2015
-        </p>
-    </footer>
 </div>
 </body>
 </html>
