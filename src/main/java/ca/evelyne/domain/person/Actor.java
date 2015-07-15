@@ -2,7 +2,7 @@ package ca.evelyne.domain.person;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
@@ -11,8 +11,7 @@ public class Actor extends Person {
     /**
      * class fields
      */
-//    @OneToMany
-//    private List<MovieCharacter> characterList;
+
     private String cityBornIn;
     private String countryBornIn;
 

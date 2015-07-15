@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 
 import java.util.List;
 
@@ -20,12 +22,12 @@ public class MovieService {
     MovieRepository movieRepository;
 
 
-    //@RequestMapping("/all")
+    @RequestMapping("/all")
     public List<Movie> findAll() {
         return movieRepository.findAll();
     }
 
-    //@RequestMapping(value = "/id/{movieId}", method = GET)
+    @RequestMapping(value = "/id/{movieId}", method = GET)
     public ResponseEntity<Movie> findById(@PathVariable("movieId") int id) {
         Movie movie = movieRepository.findOne(id);
         if(movie == null) {
@@ -40,7 +42,7 @@ public class MovieService {
         movieRepository.delete(id);
     }
 
-    //@RequestMapping(value = "/create", method = POST, consumes = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/create", method = POST, consumes = APPLICATION_JSON_VALUE)
     public ResponseEntity create(@RequestBody Movie movie) {
         movieRepository.save(movie);
         HttpHeaders headers = new HttpHeaders();

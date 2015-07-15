@@ -72,6 +72,7 @@
                     <tr>
                         <th>Character</th>
                         <th>Actor</th>
+                        <th>update character</th>
                         <th>delete character</th>
 
                     </tr>
@@ -79,7 +80,8 @@
                     <c:forEach var="movieCharacter" items="${movie.cast}">
                         <tr>
                             <td>${movieCharacter.name}</td>
-                            <td>${movieCharacter.actor.firstName} ${movieCharacter.actor.lastName}</td>
+                            <td><a href="actor/id?=${movieCharacter.actor.id}">${movieCharacter.actor.firstName} ${movieCharacter.actor.lastName}</a></td>
+                            <td><a href="/character/form?id=${movieCharacter.id}"> <span class="glyphicon glyphicon-pencil"/></a></td>
                             <td><a href="/character/delete/id/${movieCharacter.id}"> <span class="glyphicon glyphicon-erase"/></a></td>
                         </tr>
                     </c:forEach>
@@ -90,6 +92,7 @@
     </div>
 
 
+    <a href="/character/form" class="btn btn-primary">Add a character</a>
 
 
 

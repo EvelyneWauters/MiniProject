@@ -15,7 +15,7 @@
       background-position: center;
       background-repeat: no-repeat;}
   </style>
-  <title>Add actor</title>
+  <title>Add Character</title>
 </head>
 
 <body class = "blueskies">
@@ -28,13 +28,13 @@
   <h2>add a character <small>or edit an existing one</small></h2>
 
 
-  <sf:form commandName="movieCharacter" action="/character/create">
+  <sf:form commandName="character" action="/character/create">
+
 
 
     <div class="form-group">
-      <label for="name"> name</label>
+      <label for="name">name</label>
       <sf:input path="name" class="form-control"/>
-      <sf:errors path="name"/>
     </div>
 
     <%--TODO: add actors to a character--%>
@@ -43,13 +43,12 @@
       <%--<sf:select path="actor" items="${actors}" cssClass="form-control"/>--%>
     <%--</div>--%>
 
-
-
     <sf:hidden path="id"/>
 
 
     <button type="submit" class="btn btn-success">submit</button>
   </sf:form>
+
 </div>
 </body>
 </html>

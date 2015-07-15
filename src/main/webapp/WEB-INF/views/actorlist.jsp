@@ -28,7 +28,6 @@
           <th>country</th>
           <th>born</th>
           <th>edit</th>
-          <th>delete</th>
         </tr>
 
         <c:forEach var="actor" items="${actor}">
@@ -38,7 +37,6 @@
             <td><a href="/actor/id/${actor.id}">${actor.countryBornIn}</a></td>
             <td><a href="/actor/id/${actor.id}">${actor.birthDate}</a></td>
             <td><a href="/actor/form?id=${actor.id}"> <span class="glyphicon glyphicon-pencil"/>  </a></td>
-            <td><a href="/actor/delete/id/${actor.id}"> <span class="glyphicon glyphicon-erase"/>  </a></td>
           </tr>
         </c:forEach>
       </table>

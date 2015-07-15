@@ -2,7 +2,7 @@ package ca.evelyne.domain.person;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Entity

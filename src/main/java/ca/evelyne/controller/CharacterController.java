@@ -1,6 +1,5 @@
 package ca.evelyne.controller;
 
-import ca.evelyne.domain.person.Actor;
 import ca.evelyne.domain.person.MovieCharacter;
 import ca.evelyne.repository.MovieCharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.Map;
 
@@ -24,7 +24,7 @@ public class CharacterController {
     //Find all characters
     @RequestMapping("/all")
     public String allCharactersSortAlfa(Map<String, Object> model)   {
-        model.put("movie", movieCharacterRepository.findAll(new Sort(new Sort.Order(Sort.Direction.ASC, "name"))));
+        model.put("movieCharacter", movieCharacterRepository.findAll(new Sort(new Sort.Order(Sort.Direction.ASC, "name"))));
         return "characterlist";
     }
 
@@ -43,7 +43,7 @@ public class CharacterController {
         if(characterId!=null)    {
             model.put("character", movieCharacterRepository.findOne(characterId));
         } else {
-            model.put("character", new Actor());
+            model.put("character", new MovieCharacter());
         }
         return "characterform";
     }
@@ -52,18 +52,20 @@ public class CharacterController {
 
     //POST-method of the create-page
     @RequestMapping(value= "/create", method = RequestMethod.POST)
-    public String createCharacter(@Valid MovieCharacter movieCharacter, BindingResult bindingResult)  {
+    public String createCharacter(@Valid MovieCharacter movieCharacter, BindingResult bindingResult, HttpServletRequest request)  {
         if(bindingResult.hasErrors())   {
             return "characterform";
         }
         movieCharacterRepository.save(movieCharacter);
-        return "redirect:/character/all";
+        String referer = request.getHeader("Referer");
+        return "redirect:"+ referer;
     }
 
 
     //delete characters
     @RequestMapping(value="/delete/id/{id}")
     public String deleteCharacter(@PathVariable("id") int characterId)    {
+
         movieCharacterRepository.delete(characterId);
         return "redirect:/character/all";
     }

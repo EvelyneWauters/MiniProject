@@ -27,6 +27,7 @@ public class Movie {
     private double rating;
 
     @OneToMany
+    @JoinTable(name="movie_cast", joinColumns=@JoinColumn(name="movie_id"), inverseJoinColumns=@JoinColumn(name="character_id"))
     private List<MovieCharacter> cast;
 
     //TODO: convert coverImage from Url to real image

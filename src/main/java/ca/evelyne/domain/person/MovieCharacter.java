@@ -12,12 +12,7 @@ public class MovieCharacter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-
-    //TODO: bidirectioneel implementeren:
-//    @ManyToOne
-//    private Movie movie;
-
-    @ManyToOne(optional = false)
+    @ManyToOne
     private Actor actor;
 
     /**
@@ -54,4 +49,5 @@ public class MovieCharacter {
     public Integer getId() {
         return id;
     }
+
 }

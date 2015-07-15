@@ -100,36 +100,18 @@ insert into movie_character(name, actor_id) values('Dr. King Schultz', 14);
 insert into movie_character(name, actor_id) values('Calvin Candie', 10);
 -- insert into movie_character(name, actor_id) values('', );
 
-insert into movie_cast(movie_id, cast_id) values(1, 1);
-insert into movie_cast(movie_id, cast_id) values(1, 2);
-insert into movie_cast(movie_id, cast_id) values(1, 3);
-insert into movie_cast(movie_id, cast_id) values(1, 4);
-insert into movie_cast(movie_id, cast_id) values(1, 5);
-insert into movie_cast(movie_id, cast_id) values(1, 6);
-insert into movie_cast(movie_id, cast_id) values(1, 7);
-insert into movie_cast(movie_id, cast_id) values(1, 8);
-insert into movie_cast(movie_id, cast_id) values(2, 10);
-insert into movie_cast(movie_id, cast_id) values(2, 11);
-insert into movie_cast(movie_id, cast_id) values(2, 12);
-insert into movie_cast(movie_id, cast_id) values(3, 13);
-insert into movie_cast(movie_id, cast_id) values(3, 14);
-insert into movie_cast(movie_id, cast_id) values(3, 15);
-insert into movie_cast(movie_id, cast_id) values(4, 9);
-
-
-insert into brand(id, name) values(1, 'Audi');
-insert into brand(id, name) values(2, 'BMW');
-insert into brand(id, name) values(3, 'Opel');
-
-insert into model(id, name, brand_id) values(1, 'A1', 1);
-insert into model(id, name, brand_id) values(2, 'A3', 1);
-insert into model(id, name, brand_id) values(3, '118d', 2);
-insert into model(id, name, brand_id) values(4, '320d', 2);
-insert into model(id, name, brand_id) values(5, 'X5', 2);
-insert into model(id, name, brand_id) values(6, 'Corsa', 3);
-insert into model(id, name, brand_id) values(7, 'Astra', 3);
-insert into model(id, name, brand_id) values(8, 'Vectra', 3);
-
-insert into car(license_plate, model_id) values('1-AGI-764', 1);
-insert into car(license_plate, model_id) values('ALD-124', 8);
-insert into car(license_plate, model_id) values('1-LIFE', 5);
+insert into movie_cast(movie_id, character_id) values(1, 1);
+insert into movie_cast(movie_id, character_id) values(1, 2);
+insert into movie_cast(movie_id, character_id) values(1, 3);
+insert into movie_cast(movie_id, character_id) values(1, 4);
+insert into movie_cast(movie_id, character_id) values(1, 5);
+insert into movie_cast(movie_id, character_id) values(1, 6);
+insert into movie_cast(movie_id, character_id) values(1, 7);
+insert into movie_cast(movie_id, character_id) values(1, 8);
+insert into movie_cast(movie_id, character_id) values(2, 10);
+insert into movie_cast(movie_id, character_id) values(2, 11);
+insert into movie_cast(movie_id, character_id) values(2, 12);
+insert into movie_cast(movie_id, character_id) values(3, 13);
+insert into movie_cast(movie_id, character_id) values(3, 14);
+insert into movie_cast(movie_id, character_id) values(3, 15);
+insert into movie_cast(movie_id, character_id) values(4, 9);

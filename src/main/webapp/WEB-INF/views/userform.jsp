@@ -15,7 +15,7 @@
       background-position: center;
       background-repeat: no-repeat;}
   </style>
-  <title>Register now!</title>
+  <title>Register, it's free (for now)!</title>
 </head>
 
 <body class = "blueskies">
@@ -28,9 +28,9 @@
 
 
     <div class="form-group">
-      <label for="nickname">nickname</label>
-      <sf:input path="nickname" class="form-control"/>
-      <sf:errors path="nickname"/>
+      <label for="login">nickname</label>
+      <sf:input path="login" class="form-control"/>
+      <sf:errors path="login"/>
     </div>
 
     <div class="form-group">
@@ -51,7 +51,7 @@
     <%--TODO: make a password field--%>
     <div class="form-group">
       <label for="password">password</label>
-      <sf:input path="password" class="form-control"/>
+      <sf:password path="password" class="form-control"/>
     </div>
 
     <div class="form-group">
@@ -65,14 +65,10 @@
     </div>
 
     <div class="form-group">
-      <label for="birthDate">when do you blow your birthdaycandles?</label>
+      <label for="birthDate">when do you blow out your birthdaycandles?</label>
       <sf:input path="birthDate" class="form-control" />
     </div>
 
-    <div class="form-group">
-      <label for="cityBornIn">city where she/he was born</label>
-      <sf:input path="cityBornIn" class="form-control" />
-    </div>
 
     <div class="form-group">
       <label for="imageUrl">show yourself!</label>

@@ -73,10 +73,10 @@ public class ActorController {
 
     //put gender-enum values in a list so we can use it for the dropdown menu
     @ModelAttribute(value = "genders")
-    public List<String> genders(){
-        List<String> genders = new ArrayList<>();
+    public List<Gender> genders(){
+        List<Gender> genders = new ArrayList<>();
         for (Gender g: Gender.values()){
-            genders.add(g.getLabel());
+            genders.add(g);
         }
         return genders;
     }

@@ -1,20 +1,17 @@
 package ca.evelyne.controller;
 
-import ca.evelyne.domain.person.Actor;
-import ca.evelyne.domain.person.MovieCharacter;
+import ca.evelyne.domain.person.Gender;
 import ca.evelyne.domain.person.User;
-import ca.evelyne.repository.MovieCharacterRepository;
 import ca.evelyne.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -29,14 +26,14 @@ public class UserController {
     //Find all users
     @RequestMapping("/all")
     public String allUsersSortAlfa(Map<String, Object> model)   {
-        model.put("movie", userRepository.findAll(new Sort(new Sort.Order(Sort.Direction.ASC, "login"))));
+        model.put("user", userRepository.findAll(new Sort(new Sort.Order(Sort.Direction.ASC, "login"))));
         return "userlist";
     }
 
 
     //find users by id and show details
     @RequestMapping(value = "/id/{id}", method = GET)
-    public String characterById(Map<String, Object> model, @PathVariable("id") int userId) {
+    public String userById(Map<String, Object> model, @PathVariable("id") int userId) {
         model.put("user", userRepository.findOne(userId));
         return "userdetail";
     }
@@ -44,15 +41,14 @@ public class UserController {
 
     //GET-method of the create-page
     @RequestMapping(value="/form", method = RequestMethod.GET)
-    public String characterForm(Map<String, Object> model, @RequestParam(value = "id",required = false) Integer userId)    {
+    public String userForm(Map<String, Object> model, @RequestParam(value = "id",required = false) Integer userId)    {
         if(userId!=null)    {
             model.put("user", userRepository.findOne(userId));
         } else {
-            model.put("user", new Actor());
+            model.put("user", new User());
         }
-        return "characterform";
+        return "userform";
     }
-
 
 
     //POST-method of the create-page
@@ -62,7 +58,7 @@ public class UserController {
             return "userform";
         }
         userRepository.save(user);
-        return "redirect:/user/all";
+        return "redirect:/";
     }
 
 
@@ -70,8 +66,17 @@ public class UserController {
     @RequestMapping(value="/delete/id/{id}")
     public String deleteUser(@PathVariable("id") int userId)    {
         userRepository.delete(userId);
-        return "redirect:/user/all";
+        return "redirect:/";
     }
 
+    //put gender-enum values in a list so we can use it for the dropdown menu
+    @ModelAttribute(value = "genders")
+    public List<Gender> genders(){
+        List<Gender> genders = new ArrayList<>();
+        for (Gender g: Gender.values()){
+            genders.add(g);
+        }
+        return genders;
+    }
 
 }
