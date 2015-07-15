@@ -55,7 +55,7 @@
 
             <div class="form-group">
                 <label for="length">length</label>
-                <sf:input path="length" class="form-control" />
+                <sf:input path="length" class="form-control" value=" " />
             </div>
 
             <div class="form-group">

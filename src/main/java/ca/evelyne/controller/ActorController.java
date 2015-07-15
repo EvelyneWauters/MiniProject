@@ -42,7 +42,7 @@ public class ActorController {
 
     //GET-method of the create-page
     @RequestMapping(value="/form", method = RequestMethod.GET)
-    public String ActorForm(Map<String, Object> model, @RequestParam(value = "id",required = false) Integer actorId)    {
+    public String actorForm(Map<String, Object> model, @RequestParam(value = "id",required = false) Integer actorId)    {
         if(actorId!=null)    {
             model.put("actor", actorRepository.findOne(actorId));
         } else {
@@ -56,9 +56,9 @@ public class ActorController {
     //POST-method of the create-page
     @RequestMapping(value= "/create", method = RequestMethod.POST)
     public String createActor(@Valid Actor actor, BindingResult bindingResult)  {
-        if(bindingResult.hasErrors())   {
-            return "actorform";
-        }
+//        if(bindingResult.hasErrors())   {
+//            return "actorform";
+//        }
         actorRepository.save(actor);
         return "redirect:/actor/all";
     }
@@ -73,10 +73,10 @@ public class ActorController {
 
     //put gender-enum values in a list so we can use it for the dropdown menu
     @ModelAttribute(value = "genders")
-    public List<Gender> genders(){
-        List<Gender> genders = new ArrayList<>();
+    public List<String> genders(){
+        List<String> genders = new ArrayList<>();
         for (Gender g: Gender.values()){
-            genders.add(g);
+            genders.add(g.getLabel());
         }
         return genders;
     }

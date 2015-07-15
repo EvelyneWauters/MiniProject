@@ -17,7 +17,7 @@ public class MovieCharacter {
 //    @ManyToOne
 //    private Movie movie;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     private Actor actor;
 
     /**
