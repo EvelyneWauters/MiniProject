@@ -1,6 +1,6 @@
 package ca.evelyne.service;
 
-import ca.evelyne.domain.person.Comment;
+import ca.evelyne.domain.movie.Comment;
 import ca.evelyne.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;

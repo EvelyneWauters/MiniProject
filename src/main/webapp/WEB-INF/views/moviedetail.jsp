@@ -95,13 +95,14 @@
 
 
     <a href="/character/form" class="btn btn-primary">Add a character</a>
+    <a href="/comment/all?id=${movie.id}" class="btn btn-primary">Show the comments on this movie</a>
 
 
 
     <hr>
     <footer>
         <p>
-            © Evelyne 2015
+            © Let's move to Hollywood -- Evelyne 2015
         </p>
     </footer>
 

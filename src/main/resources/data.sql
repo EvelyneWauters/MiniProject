@@ -115,3 +115,67 @@ insert into movie_cast(movie_id, character_id) values(3, 13);
 insert into movie_cast(movie_id, character_id) values(3, 14);
 insert into movie_cast(movie_id, character_id) values(3, 15);
 insert into movie_cast(movie_id, character_id) values(4, 9);
+
+insert into user(first_name, last_name, login, password, email, gender, bio, image_url) VALUES
+  ('Evelyne', 'Wauters', 'Flixxi', 'wixxi', 'evelyne.wauters@gmail.com', 'FEMALE',
+  'Im the first user WOEHOEW', 'https://scontent-ams2-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/1458498_10152383557484164_1850209816612643697_n.jpg?oh=2c37d7b719c8657dacacb5cfb35898f6&oe=5619F0F3');
+insert into user(first_name, last_name, login, password, email, gender, bio, image_url) VALUES
+  ('Doctor', 'Who', 'The Doctor', 'biggerontheinside', 'jeronimo@tardis.space', 'MALE',
+  'Wibbley Wobbley, its hard implementing movies with over 12 actors playing one role',
+  'http://www.blastr.com/sites/blastr/files/MattSmithPhotoshoot321.jpg');
+insert into user(first_name, last_name, login, password, email, gender, bio, image_url) VALUES
+  ('R2', 'D2', 'BeepBeep', 'plingploeng', 'scrapforparts@force.star', 'FEMALE',
+  'BEEP BLOOP BLOP BLEEP BOOP',
+  'http://i.imgur.com/hmkyEDN.jpg');
+
+
+
+insert into comment(content, date_added, movie_id, user_id) values
+  ('What a great movie, such beautiful scenery too!', '2015-07-15', 2, 2);
+
+insert into comment(content, date_added, movie_id, user_id) values
+  ('EASTER EGG: From the main menu screen, keep clicking "left" until you light up a triangle with a dot in the center on the right side of the screen. The icon will take you to the full Fruity Oaty Bar commercial. In the DVD commentary, Joss Whedon admitted that he wanted the commercial to be as odd as possible. He said it was heavily inspired by the "Mr. Sparkle" advertisement from The Simpsons: In Marge We Trust (1997) The uncredited actor in the commercial and the Easter Egg segment is Robert Michael Lee.',
+  '2015-07-10', 1, 1);
+
+insert into comment(content, date_added, movie_id, user_id) values
+  ('The cast had a running gag where they would yell Summer Glau''s name whenever any of them flubbed a line or forgot to do something. It originated on Firefly (2002) when she forgot her line at the end of a very long and difficult scene. (Nathan Fillion, Morena Baccarin and Sean Maher can be seen doing this on the DVD blooper reel.)',
+  '2015-06-15', 1, 2);
+
+insert into comment(content, date_added, movie_id, user_id) values
+  ('A picture of Zelda Fitzgerald, wife of author F. Scott Fitzgerald, can be seen hanging on the wall in the background of the apartment Tom shares with Myrtle.',
+  '2015-07-15', 3, 1);
+
+insert into comment(content, date_added, movie_id, user_id) values
+  ('Jamie Foxx used his own horse, Tony, in the movie. He got it four years prior as a birthday present.',
+  '2015-07-12', 3, 1);
+
+insert into comment(content, date_added, movie_id, user_id) values
+  ('Absolutely loved every minute of this movie. Usually I''m not too crazy about Tarantino''s movies, but this one is definitely the best one I''ve seen in a long time. The actors were picked perfectly. The overall experience of a movie is amazing. When we first went to watch it, I was a bit skeptical and thought I''d end up leaving an hour into the movie (it''s a 3 hr movie), but it grabbed my attention from the very beginning and I didn''t even wanna get up to go to the bathroom, afraid to miss something. I''m usually very particular about the movies, nothing can hardly satisfy me, but this one is definitely in the top 5. Soundtrack was perfect. When I got home, I''ve done some more research on it and loved it even more! Overall, I would highly recommend this film!',
+  '2015-07-15', 3, 2);
+
+insert into comment(content, date_added, movie_id, user_id) values
+  ('Bleep Bloop Blop Beep Boop Bop Beep Bleep Bloop Blop Beep Boop Bop Beep Bleep Bloop Blop Beep Boop Bop Beep ', '2015-07-01', 3, 3);
+
+insert into comment(content, date_added, movie_id, user_id) values
+  ('In an interview, Quentin Tarantino stated that originally the mandingo fight scene and the scene with the dogs were longer and more violent. He said he felt like he was going to "traumatize" the audience, so he cut both scenes down.',
+  '2015-07-15', 3, 2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

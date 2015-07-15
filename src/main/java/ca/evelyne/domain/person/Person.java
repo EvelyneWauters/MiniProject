@@ -1,6 +1,8 @@
 package ca.evelyne.domain.person;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.sql.Date;
 
 @MappedSuperclass
@@ -12,14 +14,26 @@ public class Person {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @NotNull
+    @Size(min = 2, max = 50)
     private String firstName;
+
+    @NotNull
+    @Size(min = 2, max = 50)
     private String lastName;
+
     @Lob
     private String bio;
+
+    @Column(length = 350)
     private String imageUrl;
+
     private Date birthDate;
+
     @Enumerated (EnumType.STRING)
     private Gender gender;
+
     @Lob
     private byte[] image;
 
@@ -27,16 +41,6 @@ public class Person {
      * Constructors
      */
     public Person() {
-    }
-
-    public Person(String firstName, String lastName, String bio, String imageUrl, Date birthDate, Gender gender, byte[] image) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.bio = bio;
-        this.imageUrl = imageUrl;
-        this.birthDate = birthDate;
-        this.gender = gender;
-        this.image = image;
     }
 
     /**

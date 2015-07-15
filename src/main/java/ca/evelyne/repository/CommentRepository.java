@@ -1,6 +1,6 @@
 package ca.evelyne.repository;
 
-import ca.evelyne.domain.person.Comment;
+import ca.evelyne.domain.movie.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

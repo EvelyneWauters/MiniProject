@@ -21,12 +21,6 @@ public class Actor extends Person {
     public Actor() {
     }
 
-    public Actor(String firstName, String lastName, String bio, String imageURL, Date birthDate, Gender gender, byte[] image, String cityBornIn, String countryBornIn) {
-        super(firstName, lastName, bio, imageURL, birthDate, gender, image);
-        this.cityBornIn = cityBornIn;
-        this.countryBornIn = countryBornIn;
-    }
-
     /**
      * getters & setters
      */

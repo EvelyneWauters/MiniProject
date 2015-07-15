@@ -1,4 +1,7 @@
-package ca.evelyne.domain.person;
+package ca.evelyne.domain.movie;
+
+import ca.evelyne.domain.person.User;
+import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -12,9 +15,16 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Lob
+    @NotBlank
     private String content;
+
     private Date dateAdded;
+
+    @ManyToOne
+    private Movie movie;
+
     @ManyToOne
     private User user;
 
@@ -63,5 +73,13 @@ public class Comment {
 
     public void setDateAdded(Date dateAdded) {
         this.dateAdded = dateAdded;
+    }
+
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
     }
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../../../resources/public/mainstylesheet.css"/>
+    <link rel="stylesheet" href="mainstylesheet.css"/>
 
 </head>
 
@@ -51,6 +51,12 @@
 
     <a href="/movie/form" class="btn btn-primary">Add a movie</a>
     <a href="/" class="btn btn-default">Take me all the way home</a>
+
+    <footer>
+        <p>
+            © Let's move to Hollywood -- Evelyne 2015
+        </p>
+    </footer>
 </div>
 </body>
 </html>

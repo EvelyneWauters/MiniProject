@@ -17,7 +17,7 @@
 
 <body>
 <div class="container">
-  <h1> ${actor.firstName} ${actor.firstName} </h1>
+  <h1> ${actor.firstName} ${actor.lastName} </h1>
   <h5>${actor.birthDate} in ${actor.cityBornIn}, ${actor.countryBornIn}</h5>
 
   <div class="row">
@@ -44,7 +44,7 @@
   <hr>
   <footer>
     <p>
-      © Evelyne 2015
+      © Let's move to Hollywood -- Evelyne 2015
     </p>
   </footer>
 

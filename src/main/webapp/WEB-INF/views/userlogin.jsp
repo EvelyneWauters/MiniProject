@@ -12,5 +12,11 @@
 </head>
 <body>
 
+
+<footer>
+  <p>
+    © Let's move to Hollywood -- Evelyne 2015
+  </p>
+</footer>
 </body>
 </html>

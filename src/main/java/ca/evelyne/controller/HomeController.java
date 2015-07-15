@@ -26,6 +26,10 @@ public class HomeController {
         return "homepage";
     }
 
+    @RequestMapping("/new")
+    public String homenew() {return "homepagenew";}
+
+
     @Bean
     public EmbeddedServletContainerCustomizer containerCustomizer() {
         return new EmbeddedServletContainerCustomizer() {

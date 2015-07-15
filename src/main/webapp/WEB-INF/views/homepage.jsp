@@ -5,11 +5,11 @@
     <title>Homepage Moviedatabase</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
-  <link rel="stylesheet" href="../../../resources/public/mainstylesheet.css"/>
+  <link rel="stylesheet" type="text/css" href="css/mainstylesheet.css"/>
 </head>
 
 
-<body>
+<body class="hollywoodbw">
 <div class="container">
 
     <div class="row">
@@ -58,13 +58,17 @@
             <h6><span class="glyphicon glyphicon-fire"/>-- under construction -- under construction --<span class="glyphicon glyphicon-fire"/></h6>
             <p> <span class="glyphicon glyphicon-film"/> Welcome to this brand new movie database</p>
             <span>Movielist</span>
-            <a href="/movie/all">click here to see all added movies</a> <br/>
+            <a href="/new">see the new website::</a> <br/>
             <a href="/actor/detail">click here to see a test of an actordetailpage</a>        </div>
     </div>
 
 
 
-
+    <footer>
+        <p>
+            © Let's move to Hollywood -- Evelyne 2015
+        </p>
+    </footer>
 </div>
 </body>
 </html>
