@@ -11,7 +11,7 @@ public class MovieCharacter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
+    private String fullName;
     @ManyToOne
     private Actor actor;
 
@@ -30,12 +30,12 @@ public class MovieCharacter {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public Actor getActor() {

@@ -1,7 +1,7 @@
 package ca.evelyne.domain.person;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 
 @Entity
@@ -55,5 +55,13 @@ public class Comment {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Date getDateAdded() {
+        return dateAdded;
+    }
+
+    public void setDateAdded(Date dateAdded) {
+        this.dateAdded = dateAdded;
     }
 }

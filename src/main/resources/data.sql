@@ -83,21 +83,21 @@ insert into movie(title, genre, length, year_released, director, summary, cover_
 
 
 
-insert into movie_character(name, actor_id) values('Captain Malcolm Reynolds', 2);
-insert into movie_character(name, actor_id) values('Zoe', 3);
-insert into movie_character(name, actor_id) values('Wash', 4);
-insert into movie_character(name, actor_id) values('Inara', 5);
-insert into movie_character(name, actor_id) values('Jayne', 6);
-insert into movie_character(name, actor_id) values('Kaylee', 7);
-insert into movie_character(name, actor_id) values('Simon', 8);
-insert into movie_character(name, actor_id) values('River', 9);
-insert into movie_character(name, actor_id) values('Jordan Belfort', 10);
-insert into movie_character(name, actor_id) values('Jay Gatsby', 10);
-insert into movie_character(name, actor_id) values('Daisy Buchanan', 11);
-insert into movie_character(name, actor_id) values('Tom Buchanan', 12);
-insert into movie_character(name, actor_id) values('Django', 13);
-insert into movie_character(name, actor_id) values('Dr. King Schultz', 14);
-insert into movie_character(name, actor_id) values('Calvin Candie', 10);
+insert into movie_character(full_name, actor_id) values('Captain Malcolm Reynolds', 2);
+insert into movie_character(full_name, actor_id) values('Zoe', 3);
+insert into movie_character(full_name, actor_id) values('Wash', 4);
+insert into movie_character(full_name, actor_id) values('Inara', 5);
+insert into movie_character(full_name, actor_id) values('Jayne', 6);
+insert into movie_character(full_name, actor_id) values('Kaylee', 7);
+insert into movie_character(full_name, actor_id) values('Simon', 8);
+insert into movie_character(full_name, actor_id) values('River', 9);
+insert into movie_character(full_name, actor_id) values('Jordan Belfort', 10);
+insert into movie_character(full_name, actor_id) values('Jay Gatsby', 10);
+insert into movie_character(full_name, actor_id) values('Daisy Buchanan', 11);
+insert into movie_character(full_name, actor_id) values('Tom Buchanan', 12);
+insert into movie_character(full_name, actor_id) values('Django', 13);
+insert into movie_character(full_name, actor_id) values('Dr. King Schultz', 14);
+insert into movie_character(full_name, actor_id) values('Calvin Candie', 10);
 -- insert into movie_character(name, actor_id) values('', );
 
 insert into movie_cast(movie_id, character_id) values(1, 1);

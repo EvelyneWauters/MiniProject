@@ -4,7 +4,10 @@ package ca.evelyne.domain.movie;
 import ca.evelyne.domain.person.MovieCharacter;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 @Entity
 public class Movie {
@@ -28,7 +31,7 @@ public class Movie {
 
     @OneToMany
     @JoinTable(name="movie_cast", joinColumns=@JoinColumn(name="movie_id"), inverseJoinColumns=@JoinColumn(name="character_id"))
-    private List<MovieCharacter> cast;
+    private Set<MovieCharacter> cast= new TreeSet<>();
 
     //TODO: convert coverImage from Url to real image
 
@@ -37,19 +40,6 @@ public class Movie {
      * Constructors
      */
     public Movie() {
-    }
-
-    public Movie(String title, int length, String summary, Genre genre, String yearReleased, String coverImageUrl, String movieTrailerUrl, String director, double rating, List<MovieCharacter> cast) {
-        this.title = title;
-        this.length = length;
-        this.summary = summary;
-        this.genre = genre;
-        this.yearReleased = yearReleased;
-        this.coverImageUrl = coverImageUrl;
-        this.movieTrailerUrl = movieTrailerUrl;
-        this.director = director;
-        this.rating = rating;
-        this.cast = cast;
     }
 
     /**
@@ -138,11 +128,11 @@ public class Movie {
         this.director = director;
     }
 
-    public List<MovieCharacter> getCast() {
+    public Set<MovieCharacter> getCast() {
         return cast;
     }
 
-    public void setCast(List<MovieCharacter> cast) {
+    public void setCast(Set<MovieCharacter> cast) {
         this.cast = cast;
     }
 

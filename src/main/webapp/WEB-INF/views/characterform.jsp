@@ -28,22 +28,25 @@
   <h2>add a character <small>or edit an existing one</small></h2>
 
 
-  <sf:form commandName="character" action="/character/create">
+  <sf:form commandName="movieCharacter" action="/character/create">
 
 
 
     <div class="form-group">
-      <label for="name">name</label>
-      <sf:input path="name" class="form-control"/>
+      <label for="fullName">name</label>
+      <sf:input path="fullName" class="form-control"/>
     </div>
 
-    <%--TODO: add actors to a character--%>
-    <%--<div class="form-group">--%>
-      <%--<label for="actor">ACTOR</label>--%>
-      <%--<sf:select path="actor" items="${actors}" cssClass="form-control"/>--%>
-    <%--</div>--%>
+
+
+    <div class="form-group">
+      <label for="actor">actor</label>
+      <sf:select path="actor" items="${getactorlist}" itemValue="id" cssClass="form-control"/>
+    </div>
+
 
     <sf:hidden path="id"/>
+    <input type="hidden" name="movieId" value="${param['movieId']}"/>
 
 
     <button type="submit" class="btn btn-success">submit</button>

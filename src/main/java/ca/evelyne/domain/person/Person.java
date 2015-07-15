@@ -45,7 +45,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person " + this.id + " name: " + this.firstName + " " + this.lastName;
+        return this.firstName + " " + this.lastName;
     }
 
 
