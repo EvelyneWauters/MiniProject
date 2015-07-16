@@ -5,7 +5,7 @@
     <title>Homepage Moviedatabase</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
-  <link rel="stylesheet" type="text/css" href="css/mainstylesheet.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/mainstylesheet.css"/>
 </head>
 
 
@@ -61,7 +61,6 @@
             <p> <span class="glyphicon glyphicon-film"/> Welcome to this brand new movie database</p>
             <span>Movielist</span>
             <a href="/new">see the new website::</a> <br/>
-            <a href="/actor/detail">click here to see a test of an actordetailpage</a>        </div>
     </div>
 
 

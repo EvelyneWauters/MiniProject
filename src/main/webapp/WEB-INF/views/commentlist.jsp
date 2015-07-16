@@ -8,11 +8,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="mainstylesheet.css"/>
 
-    <title>All comments per movie</title>
+    <title>See comments</title>
 </head>
+
+
 <body>
 <div class="container">
-  <h1>all comments for</h1>
+  <h1>a penny for your thoughts </h1>
   <c:choose>
     <c:when test="${comment == null or empty comment}">
       <p>No comments yet :-(</p>
@@ -27,16 +29,16 @@
 
         <c:forEach var="comment" items="${comment}">
           <tr>
-            <td><a href="/movie/id/${movie.id}">${comment.user.login}</a></td>
-            <td><a href="/movie/id/${movie.id}">${comment.content}</a></td>
-            <td><a href="/movie/id/${movie.id}">${comment.dateAdded}</a></td>
+            <td><a href="/user/id/${comment.user.id}">${comment.user.login}</a></td>
+            <td>${comment.content}</td>
+            <td>${comment.dateAdded}</td>
           </tr>
         </c:forEach>
       </table>
     </c:otherwise>
   </c:choose>
 
-  <a href="/movie/form" class="btn btn-primary">Add a comment</a>
+  <a href="/comment/form" class="btn btn-primary">Add a comment</a>
   <a href="/" class="btn btn-default">Take me all the way home</a>
 
 

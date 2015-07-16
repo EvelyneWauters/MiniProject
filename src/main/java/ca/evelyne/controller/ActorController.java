@@ -4,7 +4,9 @@ package ca.evelyne.controller;
 import ca.evelyne.domain.movie.Genre;
 import ca.evelyne.domain.person.Actor;
 import ca.evelyne.domain.person.Gender;
+import ca.evelyne.domain.person.MovieCharacter;
 import ca.evelyne.repository.ActorRepository;
+import ca.evelyne.repository.MovieCharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
@@ -23,6 +25,9 @@ public class ActorController {
 
     @Autowired
     ActorRepository actorRepository;
+
+    @Autowired
+    MovieCharacterRepository movieCharacterRepository;
 
 
     //Find all actors
@@ -68,6 +73,13 @@ public class ActorController {
     //delete actor
     @RequestMapping(value="/delete/id/{id}")
     public String deleteActor(@PathVariable("id") int actorId)    {
+
+        Actor actor = actorRepository.getOne(actorId);
+        List<MovieCharacter> byActor = movieCharacterRepository.findByActor(actor);
+        for (MovieCharacter movieCharacter : byActor) {
+            movieCharacter.setActor(null);
+            movieCharacterRepository.save(movieCharacter);
+        }
         actorRepository.delete(actorId);
         return "redirect:/actor/all";
     }
@@ -75,6 +87,7 @@ public class ActorController {
     //put gender-enum values in a list so we can use it for the dropdown menu
     @ModelAttribute(value = "genders")
     public List<Gender> genders(){
+
         List<Gender> genders = new ArrayList<>();
         for (Gender g: Gender.values()){
             genders.add(g);

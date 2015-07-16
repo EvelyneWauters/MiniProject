@@ -4,10 +4,7 @@ import ca.evelyne.domain.movie.Comment;
 import ca.evelyne.domain.movie.Movie;
 import ca.evelyne.domain.person.Actor;
 import ca.evelyne.domain.person.MovieCharacter;
-import ca.evelyne.repository.ActorRepository;
-import ca.evelyne.repository.CommentRepository;
-import ca.evelyne.repository.MovieCharacterRepository;
-import ca.evelyne.repository.MovieRepository;
+import ca.evelyne.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
@@ -34,6 +31,9 @@ public class CommentController {
     @Autowired
     MovieRepository  movieRepository;
 
+    @Autowired
+    UserRepository userRepository;
+
 
     //Find all comments per movie
     @RequestMapping("/all")
@@ -48,6 +48,25 @@ public class CommentController {
         }
         model.put("comment", commentsPerMovie);
         return "commentlist";
+    }
+
+
+    //GET-method of the create-page
+    @RequestMapping(value="/form", method = RequestMethod.GET)
+    public String commentForm(Map<String, Object> model, @RequestParam(value = "id") Integer movieId)    {
+        model.put("comment", new Comment());
+        return "commentform";
+    }
+
+    //POST-method of the create-page
+    @RequestMapping(value= "/create", method = RequestMethod.POST)
+    public String createCharacter(@Valid Comment comment, BindingResult bindingResult)  {
+        if(bindingResult.hasErrors())   {
+            return "commentform";
+        }
+        if(userRepository.findUserByLogin(comment.getUser().getLogin()) --!= null)
+        commentRepository.save(comment);
+        return "redirect:/all?id={movieId}";
     }
 
 
