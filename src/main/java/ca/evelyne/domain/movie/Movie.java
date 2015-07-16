@@ -173,4 +173,12 @@ public class Movie {
     public void setRating(double rating) {
         this.rating = rating;
     }
+
+    public int getRatingCount() {
+        return ratingCount;
+    }
+
+    public void setRatingCount(int ratingCount) {
+        this.ratingCount = ratingCount;
+    }
 }

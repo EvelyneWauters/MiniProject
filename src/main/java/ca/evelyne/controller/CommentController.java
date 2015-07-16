@@ -13,10 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
@@ -55,24 +52,29 @@ public class CommentController {
     //GET-method of the create-page
     @RequestMapping(value="/form", method = RequestMethod.GET)
     public String commentForm(Map<String, Object> model, @RequestParam(value = "movieid") Integer movieId)    {
+
         model.put("comment", new Comment());
         return "commentform";
     }
 
     //POST-method of the create-page
     @RequestMapping(value= "/create", method = RequestMethod.POST)
-    public String createCharacter(@Valid Comment comment, BindingResult bindingResult)  {
+    public String createCharacter(@Valid Comment comment, BindingResult bindingResult, @RequestParam(value = "movieid") Integer movieId)  {
         if(bindingResult.hasErrors())   {
             return "commentform";
         }
         User user = userRepository.findUserByLogin(comment.getUser().getLogin());
+        comment.setMovie(movieRepository.findOne(movieId));
+        comment.setDateAdded(new Date());
+
         if(user != null)    {
-            if(user.getPassword() == Integer.toString(comment.getUser().getPassword().hashCode()))   {
+            if(user.getPassword().equals(Integer.toString(comment.getUser().getPassword().hashCode())))   {
+                comment.setUser(user);
                 commentRepository.save(comment);
-                return "redirect:/all?id="+comment.getMovie().getId();
+                return "redirect:/all?id=" + comment.getMovie().getId();
             }
         }
-        return "commentform";
+        return "redirect:/all?id=" + comment.getMovie().getId();
     }
 
 

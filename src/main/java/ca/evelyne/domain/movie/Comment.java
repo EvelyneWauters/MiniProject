@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import java.sql.Date;
+import java.util.Date;
 
 
 @Entity
@@ -38,6 +38,11 @@ public class Comment {
     public Comment() {
     }
 
+
+    public Comment(Movie movie, Date dateAdded) {
+        this.movie = movie;
+        this.dateAdded = dateAdded;
+    }
 
     public Comment(String content, User user) {
         this.content = content;
@@ -92,5 +97,8 @@ public class Comment {
     public void setMovie(Movie movie) {
         this.movie = movie;
     }
+
+
+
 
 }

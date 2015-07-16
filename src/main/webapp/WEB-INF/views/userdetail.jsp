@@ -20,13 +20,13 @@
 
   <jsp:include page="navbar.jsp"></jsp:include>
 
-
-  <h1> ${actor.firstName} ${actor.lastName} </h1>
-  <h5>${actor.birthDate} in ${actor.cityBornIn}, ${actor.countryBornIn}</h5>
+  <h1> This is the profile page of cinephiliac ${user.login}</h1>
+  <h3> ${user.firstName} ${user.lastName} </h3>
+  <h5>sing happy birthday on ${user.birthDate} </h5>
 
   <div class="row">
     <div class="col-md-4">
-      <img src="${actor.imageUrl}" alt="cover img" class="img-responsive"/>
+      <img src="${user.imageUrl}" alt="cover img" class="img-responsive"/>
 
     </div>
 
@@ -34,7 +34,7 @@
 
       <h2>Bio: </h2>
 
-      <p>${actor.bio} </p>
+      <p>${user.bio} </p>
 
 
     </div>

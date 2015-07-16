@@ -116,17 +116,20 @@ insert into movie_cast(movie_id, character_id) values(3, 14);
 insert into movie_cast(movie_id, character_id) values(3, 15);
 insert into movie_cast(movie_id, character_id) values(4, 9);
 
-insert into user(first_name, last_name, login, password, email, gender, bio, image_url) VALUES
-  ('Evelyne', 'Wauters', 'Flixxi', 'wixxi', 'evelyne.wauters@gmail.com', 'FEMALE',
-  'Im the first user WOEHOEW', 'https://scontent-ams2-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/1458498_10152383557484164_1850209816612643697_n.jpg?oh=2c37d7b719c8657dacacb5cfb35898f6&oe=5619F0F3');
-insert into user(first_name, last_name, login, password, email, gender, bio, image_url) VALUES
-  ('Doctor', 'Who', 'The Doctor', 'biggerontheinside', 'jeronimo@tardis.space', 'MALE',
+insert into user(first_name, last_name, login, password, email, gender, bio, image_url, birth_date) VALUES
+  ('Evelyne', 'Wauters', 'Flixxi', '113146199', 'evelyne.wauters@gmail.com', 'FEMALE',
+  'Im the first user WOEHOEW', 'https://scontent-ams2-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/1458498_10152383557484164_1850209816612643697_n.jpg?oh=2c37d7b719c8657dacacb5cfb35898f6&oe=5619F0F3',
+  '1988-01-11');
+insert into user(first_name, last_name, login, password, email, gender, bio, image_url, birth_date) VALUES
+  ('Doctor', 'Who', 'The Doctor', '1973872090', 'jeronimo@tardis.space', 'MALE',
   'Wibbley Wobbley, its hard implementing movies with over 12 actors playing one role',
-  'http://www.blastr.com/sites/blastr/files/MattSmithPhotoshoot321.jpg');
-insert into user(first_name, last_name, login, password, email, gender, bio, image_url) VALUES
-  ('R2', 'D2', 'BeepBeep', 'plingploeng', 'scrapforparts@force.star', 'FEMALE',
+  'http://www.blastr.com/sites/blastr/files/MattSmithPhotoshoot321.jpg',
+  '1011-01-01');
+insert into user(first_name, last_name, login, password, email, gender, bio, image_url, birth_date) VALUES
+  ('R2', 'D2', 'BeepBeep', '-1279049231', 'scrapforparts@force.star', 'FEMALE',
   'BEEP BLOOP BLOP BLEEP BOOP',
-  'http://i.imgur.com/hmkyEDN.jpg');
+  'http://i.imgur.com/hmkyEDN.jpg',
+  '1971-05-04');
 
 
 

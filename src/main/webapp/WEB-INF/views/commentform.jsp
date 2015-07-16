@@ -7,7 +7,7 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="mainstylesheet.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/mainstylesheet.css"/>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
   <style>
@@ -34,8 +34,6 @@
   <sf:form commandName="comment" action="/comment/create">
 
 
-
-
     <div class="form-group">
       <label for="content">content</label>
       <sf:textarea class="form-control" rows="8" path="content" ></sf:textarea>
@@ -44,24 +42,23 @@
 
 
     <div class="form-group">
-      <label for="${comment.movie.rating}">rating</label>
-      <sf:input path="${comment.movie.rating}" class="form-control" value=" " />
+      <label for="movie.rating">rating</label>
+      <sf:input path="movie.rating" class="form-control" value=" " />
     </div>
 
     <div class="form-group">
-      <label for="${comment.user.login}">login</label>
-      <sf:input path="${comment.user.login}" class="form-control" />
+      <label for="user.login">login</label>
+      <sf:input path="user.login" class="form-control" />
     </div>
 
     <div class="form-group">
-      <label for="${comment.user.password}">password</label>
-      <sf:password path="${comment.user.password}" class="form-control"/>
+      <label for="user.password">password</label>
+      <sf:password path="user.password" class="form-control"/>
     </div>
-
 
     <sf:hidden path="id"/>
-    <input type="hidden" name="movieId" value="${param['movieId']}"/>
 
+    <input type="hidden" name="movieid" value="${param['movieid']}"/>
 
 
     <button type="submit" class="btn btn-success">submit</button>

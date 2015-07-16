@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="mainstylesheet.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/mainstylesheet.css"/>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <title>Movie in Detail</title>
@@ -25,7 +25,7 @@
 
     <div class="row">
         <div class="col-md-4">
-            <img src="${movie.coverImageUrl}" alt="cover img"/>
+            <img src="${movie.coverImageUrl}" alt="cover img" class="img-responsive"/>
 
             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">take a look at the trailer here: </button>
             <!-- Modal -->
@@ -95,6 +95,9 @@
         </c:choose>
 
     </div>
+
+
+    <input type="hidden" name="movieId" value="${param['movieId']}"/>
 
 
     <a href="/character/form" class="btn btn-primary">Add a character</a>
