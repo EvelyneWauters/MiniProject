@@ -71,10 +71,10 @@ public class CommentController {
             if(user.getPassword().equals(Integer.toString(comment.getUser().getPassword().hashCode())))   {
                 comment.setUser(user);
                 commentRepository.save(comment);
-                return "redirect:/all?id=" + comment.getMovie().getId();
+                return "redirect:/comment/all?id=" + comment.getMovie().getId();
             }
         }
-        return "redirect:/all?id=" + comment.getMovie().getId();
+        return "redirect:/comment/all?id=" + comment.getMovie().getId();
     }
 
 

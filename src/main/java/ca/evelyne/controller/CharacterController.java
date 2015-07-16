@@ -69,13 +69,20 @@ public class CharacterController {
         if(bindingResult.hasErrors())   {
             return "characterform";
         }
+        if(movieCharacter.getId() == null) {
+            Movie movie = movieRepository.getOne(movieId);
+            movie.getCast().add(movieCharacter);
 
-        Movie movie = movieRepository.getOne(movieId);
-        movie.getCast().add(movieCharacter);
-        movieRepository.save(movie);
+            movieCharacterRepository.save(movieCharacter);
+            movieRepository.save(movie);
+        } else  {
+            Movie movie = movieRepository.getOne(movieId);
+            movie.getCast().add(movieCharacter);
 
-        movieCharacterRepository.save(movieCharacter);
-        return "redirect:/movie/id/"+movieId;
+            movieRepository.save(movie);
+            movieCharacterRepository.save(movieCharacter);
+        }
+        return "redirect:/movie/id/" + movieId;
     }
 
 

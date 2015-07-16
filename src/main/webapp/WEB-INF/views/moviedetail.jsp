@@ -100,7 +100,7 @@
     <input type="hidden" name="movieId" value="${param['movieId']}"/>
 
 
-    <a href="/character/form" class="btn btn-primary">Add a character</a>
+    <a href="/character/form?movieId=${movie.id}" class="btn btn-primary">Add a character</a>
     <a href="/comment/all?id=${movie.id}" class="btn btn-primary">Show the comments on this movie</a>
 
 

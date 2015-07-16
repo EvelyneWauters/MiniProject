@@ -48,7 +48,7 @@
   <a href="/" class="btn btn-default">Take me all the way home</a>
 
 
-</div>!
+</div>
 
 
 </body>
