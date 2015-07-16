@@ -17,6 +17,9 @@
 
 <body>
 <div class="container">
+
+    <jsp:include page="navbar.jsp"></jsp:include>
+
     <h1> ${movie.title} </h1>
     <h5>length: ${movie.length} min genre: ${movie.genre}</h5>
 

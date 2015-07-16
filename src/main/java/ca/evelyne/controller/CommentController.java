@@ -4,6 +4,7 @@ import ca.evelyne.domain.movie.Comment;
 import ca.evelyne.domain.movie.Movie;
 import ca.evelyne.domain.person.Actor;
 import ca.evelyne.domain.person.MovieCharacter;
+import ca.evelyne.domain.person.User;
 import ca.evelyne.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -53,7 +54,7 @@ public class CommentController {
 
     //GET-method of the create-page
     @RequestMapping(value="/form", method = RequestMethod.GET)
-    public String commentForm(Map<String, Object> model, @RequestParam(value = "id") Integer movieId)    {
+    public String commentForm(Map<String, Object> model, @RequestParam(value = "movieid") Integer movieId)    {
         model.put("comment", new Comment());
         return "commentform";
     }
@@ -64,9 +65,14 @@ public class CommentController {
         if(bindingResult.hasErrors())   {
             return "commentform";
         }
-        if(userRepository.findUserByLogin(comment.getUser().getLogin()) --!= null)
-        commentRepository.save(comment);
-        return "redirect:/all?id={movieId}";
+        User user = userRepository.findUserByLogin(comment.getUser().getLogin());
+        if(user != null)    {
+            if(user.getPassword() == Integer.toString(comment.getUser().getPassword().hashCode()))   {
+                commentRepository.save(comment);
+                return "redirect:/all?id="+comment.getMovie().getId();
+            }
+        }
+        return "commentform";
     }
 
 

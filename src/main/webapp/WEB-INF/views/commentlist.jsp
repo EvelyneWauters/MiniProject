@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,6 +15,9 @@
 
 <body>
 <div class="container">
+
+  <jsp:include page="navbar.jsp"></jsp:include>
+
   <h1>a penny for your thoughts </h1>
   <c:choose>
     <c:when test="${comment == null or empty comment}">
@@ -38,7 +42,9 @@
     </c:otherwise>
   </c:choose>
 
-  <a href="/comment/form" class="btn btn-primary">Add a comment</a>
+
+
+  <a href="/comment/form?movieid=${param['movieid']}" class="btn btn-primary">Add a comment</a>
   <a href="/" class="btn btn-default">Take me all the way home</a>
 
 

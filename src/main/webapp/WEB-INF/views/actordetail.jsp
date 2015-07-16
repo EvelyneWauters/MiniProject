@@ -17,6 +17,10 @@
 
 <body>
 <div class="container">
+
+  <jsp:include page="navbar.jsp"></jsp:include>
+
+
   <h1> ${actor.firstName} ${actor.lastName} </h1>
   <h5>${actor.birthDate} in ${actor.cityBornIn}, ${actor.countryBornIn}</h5>
 

@@ -21,6 +21,9 @@
 <body class = "blueskies">
 <div class="container">
 
+  <jsp:include page="navbar.jsp"></jsp:include>
+
+
   <h1>Who have you been watching lately?</h1>
 
 

@@ -15,6 +15,9 @@
 
 <body>
 <div class="container">
+  <jsp:include page="navbar.jsp"></jsp:include>
+
+
   <h1>Actors</h1>
   <c:choose>
     <c:when test="${actor == null or empty actor}">

@@ -11,7 +11,10 @@
     <title></title>
 </head>
 <body>
+<div class="container">
+<jsp:include page="navbar.jsp"></jsp:include>
 
+</div>
 
 <footer>
   <p>

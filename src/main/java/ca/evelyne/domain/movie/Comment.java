@@ -4,6 +4,8 @@ import ca.evelyne.domain.person.User;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.sql.Date;
 
 
@@ -28,6 +30,8 @@ public class Comment {
     @ManyToOne
     private User user;
 
+
+
     /**
      * Constructors
      */
@@ -41,8 +45,14 @@ public class Comment {
     }
 
     /**
+     * other methods
+     */
+
+
+    /**
      * Getters & Setters
      */
+
     public Integer getId() {
         return id;
     }
@@ -82,4 +92,5 @@ public class Comment {
     public void setMovie(Movie movie) {
         this.movie = movie;
     }
+
 }

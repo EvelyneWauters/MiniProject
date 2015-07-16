@@ -15,7 +15,7 @@
       background-position: center;
       background-repeat: no-repeat;}
   </style>
-  <title>Add Character</title>
+  <title>add comment</title>
 </head>
 
 <body class = "blueskies">
@@ -24,27 +24,38 @@
   <jsp:include page="navbar.jsp"></jsp:include>
 
 
-  <h1>Who's your new favorite character?</h1>
+  <h1>thoughts?</h1>
 
 
 
-  <h2>add a character <small>or edit an existing one</small></h2>
+  <h2>add a comment </h2>
 
 
-  <sf:form commandName="movieCharacter" action="/character/create">
+  <sf:form commandName="comment" action="/comment/create">
+
 
 
 
     <div class="form-group">
-      <label for="fullName">name</label>
-      <sf:input path="fullName" class="form-control"/>
+      <label for="content">content</label>
+      <sf:textarea class="form-control" rows="8" path="content" ></sf:textarea>
     </div>
 
 
 
     <div class="form-group">
-      <label for="actor">actor</label>
-      <sf:select path="actor" items="${getactorlist}" itemValue="id" cssClass="form-control"/>
+      <label for="${comment.movie.rating}">rating</label>
+      <sf:input path="${comment.movie.rating}" class="form-control" value=" " />
+    </div>
+
+    <div class="form-group">
+      <label for="${comment.user.login}">login</label>
+      <sf:input path="${comment.user.login}" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="${comment.user.password}">password</label>
+      <sf:password path="${comment.user.password}" class="form-control"/>
     </div>
 
 
@@ -52,9 +63,9 @@
     <input type="hidden" name="movieId" value="${param['movieId']}"/>
 
 
+
     <button type="submit" class="btn btn-success">submit</button>
   </sf:form>
-
 </div>
 </body>
 </html>
